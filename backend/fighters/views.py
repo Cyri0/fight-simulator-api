@@ -21,11 +21,22 @@ def getRaces(request):
 def getWeapons(request):
     weapons = Weapon.objects.all()
     serialized = WeaponSerializer(weapons, many=True)
-    
     return Response(serialized.data)
 
 @api_view(['GET'])
 def getWeapon(request, pk):
-    weapon = Weapon.objects.get(id=pk)
+    try:
+        weapon = Weapon.objects.get(id=pk)
+    except Exception as e:
+        return Response({"message":str(e)})
     serialized = WeaponSerializer(weapon, many=False)
-    return weapon
+    return Response(serialized.data)
+
+@api_view(['GET'])
+def getRace(request, pk):
+    try:
+        race = Race.objects.get(id=pk)
+    except Exception as e:
+        return Response({"message":str(e)})
+    serialized = RaceSerializer(race, many=False)
+    return Response(serialized.data)

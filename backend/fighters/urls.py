@@ -6,4 +6,5 @@ urlpatterns = [
     path('races/', views.getRaces),
     path('weapons/', views.getWeapons),
     path('weapon/<int:pk>', views.getWeapon),
+    path('race/<int:pk>', views.getRace),
 ]
