@@ -1,7 +1,9 @@
 from django.urls import path
 from . import views
 
-
 urlpatterns = [
-    #path('', views.)
+    path('fighters/', views.getFighters),
+    path('races/', views.getRaces),
+    path('weapons/', views.getWeapons),
+    path('weapon/<int:pk>', views.getWeapon),
 ]
