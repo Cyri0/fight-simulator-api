@@ -4,11 +4,9 @@
 
 A parancsokat Prancssorban kell kiadni! (A PowerShell-ben le van tiltva a scriptek futtatása!)
 
-`mkdir fight_venv`
+`python -m venv fight_venv`
 
 `cd fight_venv`
-
-`python -m venv .`
 
 `Scripts\activate`
 
